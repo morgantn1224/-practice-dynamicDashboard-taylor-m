@@ -40,13 +40,12 @@ function showTasklist(tasklist){ //returns array of strings
 
 function displayTask(taskObj){
     let taskStr = `Task: ${taskObj.taskName}, Status: ${getStatusSymbol(taskObj)}`;
-    if(taskObj.completed == "false"){
-        document.getElementById('progress').style.backgroundColor = "green";
-    }
+
     return taskStr;
 }
 function getStatusSymbol(task){
     if(task.completed === true){
+        document.getElementById('progress').style.backgroundColor = "green";
         return "✅";
     } else {
         return "❌";
@@ -57,7 +56,7 @@ function showProgress(tasklist){
     let numIncomplete = 0;
 
     tasklist.forEach(task => {
-        if(task.completed == "true"){
+        if(task.completed == true){
             numComplete++;
         } else {
             numIncomplete++;
