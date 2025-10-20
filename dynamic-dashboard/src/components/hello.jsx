@@ -46,7 +46,7 @@ function displayTask(taskObj){
     return taskStr;
 }
 function getStatusSymbol(task){
-    if(task.completed == "true"){
+    if(task.completed === true){
         return "✅";
     } else {
         return "❌";
